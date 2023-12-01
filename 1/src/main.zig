@@ -48,6 +48,7 @@ fn part2() !void {
 
     while (try file.reader().readUntilDelimiterOrEof(&buffer, '\n')) |line| {
         var digit = std.ArrayList(u8).init(allocator);
+        defer digit.deinit();
         var result_digit: [2]u8 = undefined;
 
         var i: usize = 0;
