@@ -77,5 +77,6 @@ fn part2() !void {
 }
 
 pub fn main() !void {
+    try part1();
     try part2();
 }
