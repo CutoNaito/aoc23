@@ -56,10 +56,8 @@ fn part2() !void {
 
             var j: usize = i + 1;
             while (j <= line.len) {
-                // std.debug.print("{} {}\n", .{ i, j });
                 if (numbers.contains(line[i..j])) {
                     try digit.append(numbers.get(line[i..j]).?);
-                    // std.debug.print("{c}\n", .{numbers.get(line[i..j]).?});
                     i = j - 2;
                     break;
                 } else {
@@ -73,7 +71,6 @@ fn part2() !void {
         result_digit = [_]u8{ digit.items[0], digit.getLast() };
 
         sum += try std.fmt.parseInt(i32, &result_digit, 10);
-        std.debug.print("{s}, {c} {c}\n", .{ line, digit.items[0], digit.getLast() });
     }
 
     std.debug.print("{}\n", .{sum});
